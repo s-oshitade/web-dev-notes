@@ -11,3 +11,5 @@
 10. Get a mentor
 11. Get into the habot of chunking
 12. Break someone else's code
+
+_Credit: Angela Yu, Lead Instructor at the App Brewery_
