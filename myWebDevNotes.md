@@ -1,4 +1,8 @@
 # Section 1: Preambles
+
+```
+Note: Links to most of the resources in this web development course can be found here: https://www.appbrewery.co/p/web-development-course-resources
+``` 
 ## Section 1(4) - 12 Rules to learn code
 1. Trick your brain with the 20 minute rule
 2. Code for a purpose
@@ -27,3 +31,30 @@ _Credit: Angela Yu, Lead Instructor at the App Brewery_
 > Embrace situations where you struggle or get stuck. Use tools like Google and stackoverflow to get unstuck. Enjoy that feeling that comes when you finally solve a problem. `Consistent practice leads to mastery!`
 ```
 Will you quit when you get stuck? Remember that good programmers just stare at the screen more than half of the time! You will be hired to solve problems, so get used to the stuck-unstuck cycle. Enjoy it!
+```
+
+# SECTION 2: INTRODUCTION TO HTML 
+
+https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
+https://docs.emmet.io/cheat-sheet/ 
+
+Use <br> to insert a blank line or to move content to the next line. This does not require the closing tag. The break tag <br> is a self-closing tag. Use the horizontal rule <hr> to draw an horizontal line. This is another self-closing tag. 
+
+The head holds information about the web page and tells the browser how it should handle the page. The image tag is also self-closing. 
+
+```
+<img src=""> img -> HTML element | src="" -> HTML attribute.
+```
+
+Asides hosting pics on sites like FB/ LinkedIn, images can also be saved directly into the project folder. So, source will be something like:
+
+> `<img src="seun.png" alt="seun's profile picture">`. If I had an images folder, then I would have to add a path like so: `"images/seun.png"`.
+
+```
+Side notes
+Regular review of documentation is very vital to your journey. Make it a daily habit if possible. Some good sources include https://developer.mozilla.org/en-US/ , https://devdocs.io/ , https://www.w3schools.com/.
+
+Go and master the shourcuts on emmet https://docs.emmet.io/cheat-sheet/ and your choice code editor https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf.
+
+You can upload your images to https://photobucket.com/explore . To quickly get circular cuts of images, you can use https://crop-circle.imageonline.co/ .
+```
