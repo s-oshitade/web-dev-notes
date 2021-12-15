@@ -1,8 +1,7 @@
 # Section 1: Preambles
 
-```
-Note: Links to most of the resources in this web development course can be found here: https://www.appbrewery.co/p/web-development-course-resources
-``` 
+> Note: Links to most of the resources in this web development course can be found here: https://www.appbrewery.co/p/web-development-course-resources
+
 ## Section 1(4) - 12 Rules to learn code
 1. Trick your brain with the 20 minute rule
 2. Code for a purpose
@@ -14,7 +13,7 @@ Note: Links to most of the resources in this web development course can be found
 8. Keep learning
 9. Play Foosball
 10. Get a mentor
-11. Get into the habot of chunking
+11. Get into the habit of chunking
 12. Break someone else's code
 
 _Credit: Angela Yu, Lead Instructor at the App Brewery_
@@ -50,11 +49,28 @@ Asides hosting pics on sites like FB/ LinkedIn, images can also be saved directl
 
 > `<img src="seun.png" alt="seun's profile picture">`. If I had an images folder, then I would have to add a path like so: `"images/seun.png"`.
 
-```
-Side notes
+### Please review the docs for the image element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
+
+
+> Side notes
 Regular review of documentation is very vital to your journey. Make it a daily habit if possible. Some good sources include https://developer.mozilla.org/en-US/ , https://devdocs.io/ , https://www.w3schools.com/.
 
 Go and master the shourcuts on emmet https://docs.emmet.io/cheat-sheet/ and your choice code editor https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf.
 
 You can upload your images to https://photobucket.com/explore . To quickly get circular cuts of images, you can use https://crop-circle.imageonline.co/ .
-```
+
+## HTML Links and Anchor Tags
+The HT (hypertext) in HTML is executed with "a" tags. Anchor tags are extremely important in web development. The href is the hyperlink reference.
+
+> `<a href="https://...">Hello</a>
+<a> -> HTML element | href -> HTML attribute | https://... -> Link destination | Hello -> Link Text. `
+
+You can use a tags to create satellite pages that link back to your index.html such that you have a website rather than just a web page.
+
+> `<><a href="mailto:seun.oshitade@gmail.com">Email Me </a><p>`
+
+>`<><a href="tel:77777777">Telephone</a><p>`
+
+### You should definitely review the entire a- tag documentation on MDN. It's worth it. Afterall, HTML is all about links, right?  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+
+### Complete the goal-setting framework that has been provided.
