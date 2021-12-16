@@ -98,6 +98,32 @@ You can use a tags to create satellite pages that link back to your index.html s
 
 ### Docs - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table ; https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
 
-While the main job of tables is to display structured data, you can also see how it can be used to affect the layout of various HTML elements on a web page.
+While the main job of tables is to display structured data, it can be used to affect the layout of various HTML elements on a web page. Alot of styling attributes of tables are better handled with CSS. They are therefore mostly deprecated. Tables have three main components: <thead>, <tbody> and <tfoot>. In practice, only the first two are often used. Each component consists of rows <tr> and cells to hold the data - <th> and <td> in the <thead> and <tbody> elements respectively.
+
+`Note that table cells are wrapped in <tr> elements. No columns.`
+
+Here's an example of what a table layout might look like:
+```javaScript
+<table>
+  <thead>
+    <tr>
+      <th>Insert info here</th>
+      <th>Insert info here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Insert info here</th>
+      <th>Insert info here</th>
+    </tr>
+  </tbody>
+  <tfoot>
+  </tfoot>
+</table>
+```
+Using tables for layouts is not a great idea. There are more powerful tools. Note that you can easily introduce padding in your tables by using the cellspacing property, e.g. `<table cellspacing="20">`.
+
+`The various sub-elements for tables are valuable when styling with CSS. Tables can also be used for layouts including images, texts, and so on.` The code used in my basic html-based exercise site illustrates the use of tables (and forms). https://s-oshitade.github.io/html-personal-site/.
+Right-click and view the source code. Be sure to review official docs for tables.
 
 ## HTML FORMS
