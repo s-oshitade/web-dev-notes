@@ -1,4 +1,4 @@
-# Section 1: Preambles
+# SECTION 1: PREAMBLES
 
 > Note: Links to most of the resources in this web development course can be found here: https://www.appbrewery.co/p/web-development-course-resources
 
@@ -51,6 +51,9 @@ Asides hosting pics on sites like FB/ LinkedIn, images can also be saved directl
 
 ### Please review the docs for the image element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
 
+### Also check out: The list element (and related elements ol, ul, menu) https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
+
+### 
 
 > Side notes
 Regular review of documentation is very vital to your journey. Make it a daily habit if possible. Some good sources include https://developer.mozilla.org/en-US/ , https://devdocs.io/ , https://www.w3schools.com/.
@@ -74,3 +77,27 @@ You can use a tags to create satellite pages that link back to your index.html s
 ### You should definitely review the entire a- tag documentation on MDN. It's worth it. Afterall, HTML is all about links, right?  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
 
 ### Complete the goal-setting framework that has been provided.
+
+# My favorite shortcuts
+### Collect favorite shortcuts here. The ones that I actually use all the time!
+
+## VS Code
+1. Copy or cut entire line without highlighting. cmd+c and cmd + x respectively
+2. cmd + direction to move to the very end of row or page.
+3. Command palette - Instead of cmd + shift + p, just hit F1!
+
+## My Mac
+1. Emoji Keyboard: cmd + ctr + space. Or better still, just type the function key (based on my set preferences)!
+
+## Emmet
+1. For all elements, just start typing the element name and hit enter
+2. If you want 6 divs, type div*6 + enter. Applies to any other element
+
+# SECTION 3 
+## HTML TABLES 
+
+### Docs - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table ; https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+
+While the main job of tables is to display structured data, you can also see how it can be used to affect the layout of various HTML elements on a web page.
+
+## HTML FORMS
