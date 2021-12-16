@@ -128,8 +128,46 @@ Using tables for layouts is not a great idea. There are more powerful tools. Not
 ## HTML FORMS
 
 ### Official docs - https://devdocs.io/html/element/form . To be reviewed!
+MDN refere for HTML: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference 
+
 Sample from my exercise: https://github.com/s-oshitade/html-personal-site/blob/main/contact.html `(Lines 16 - 24)`
 
 Angela Yu on forms - 1: https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12287490#questions
 
 Angela Yu on forms - 2: https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12287496#questions
+
+# SECTION 4 - INTRODUCTION TO CSS 
+
+### Docs - https://developer.mozilla.org/en-US/docs/Web/CSS/Reference. Check out the article on background color. https://developer.mozilla.org/en-US/docs/Web/CSS/background-color 
+CSS broder-style: https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
+
+
+
+`You must make a habit of looking up stuff for yourself on google. There's no other way to survive as developer!`
+
+Look up named colors here https://developer.mozilla.org/en-US/docs/Web/CSS/color_value. Highly recommended for bookmark! You will also find the corresponding HEX values.
+
+CSS's only purpose is to style mark-up language such as HTML, XML. 
+There are 3 ways to use CSS: inline, internal CSS and external CSS links. The latter is the recommended approach.
+### A tool for finding beautiful colors and color palattes is called https://colorhunt.co/.
+
+Examples:
+1. Inline: `<body style="background-color:blue;">`
+
+2. Internal: In the `<head>` element:
+
+`<style>
+ boddy {
+   background-color: #EAF6F6;
+ }
+</style>`
+
+Note that there are some default CSS styles applied by your browser. You can use Google to look this up. WS3 has a good section on this.
+
+> One of the most important concepts in learning CSS is realizing that pretty much everything that exists on the web page are essentially just boxes. Use the pesticide chrome extension to see those boxes on your browser.
+
+You can use percentages to represent size.
+
+3. External
+`<link rel="stylesheet" href="css/styles.css">`
+
