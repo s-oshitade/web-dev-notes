@@ -141,13 +141,14 @@ Angela Yu on forms - 2: https://www.udemy.com/course/the-complete-web-developmen
 ### Docs - https://developer.mozilla.org/en-US/docs/Web/CSS/Reference. Check out the article on background color. https://developer.mozilla.org/en-US/docs/Web/CSS/background-color 
 CSS broder-style: https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
 
-
+Checkout the stanford css cheat sheet here: https://web.stanford.edu/group/csp/cs21/csscheatsheet.pdf
 
 `You must make a habit of looking up stuff for yourself on google. There's no other way to survive as developer!`
 
 Look up named colors here https://developer.mozilla.org/en-US/docs/Web/CSS/color_value. Highly recommended for bookmark! You will also find the corresponding HEX values.
 
 CSS's only purpose is to style mark-up language such as HTML, XML. 
+
 There are 3 ways to use CSS: inline, internal CSS and external CSS links. The latter is the recommended approach.
 ### A tool for finding beautiful colors and color palattes is called https://colorhunt.co/.
 
@@ -157,12 +158,12 @@ Examples:
 2. Internal: In the `<head>` element:
 
 `<style>
- boddy {
+ body {
    background-color: #EAF6F6;
  }
 </style>`
 
-Note that there are some default CSS styles applied by your browser. You can use Google to look this up. WS3 has a good section on this.
+Note that there are some default CSS styles applied by your browser. You can use Google to look this up. WS3 has a good section on this.On the chrome devtool -> Inspect -> Styles, you will find this as "user agent stylesheet".
 
 > One of the most important concepts in learning CSS is realizing that pretty much everything that exists on the web page are essentially just boxes. Use the pesticide chrome extension to see those boxes on your browser.
 
@@ -170,4 +171,45 @@ You can use percentages to represent size.
 
 3. External
 `<link rel="stylesheet" href="css/styles.css">`
+
+> Very important CSS lessons can be found in the debugging exercise here: https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12287560?start=165#questions
+
+Arrange css rules in alphabetical order, especially when the list gets long. It makes debugging easier.
+
+There are so many properties on CSS. Don't try to memorise them. Just use the index [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) . 
+
+This site is great for emojis - https://emojipedia.org/.
+
+border-radius: 100% -> circular
+
+## CSS Selectors
+css selectors: tags, classes, ids. -> Increasing selectivity. 
+
+To target tags, just use the tag name directly. To target classes and ids, use `.` and `#` respectively.
+
+## Classes vs. Ids
+
+When there are conflicting rules, ids overrule classes and classes overrule tag selectors. You can see these using the chrome dev-tool: Over-ridden rules are striked out.
+
+>You can only have a single instance of one particular id name inside a single page. Ids must be unique. Use ids to apply a specific style to a single element on a page. Whereas you can use a given class multiple times on a page. So you can use classes to group related elements that should follow the same css rule(s). 
+
+The analogy of name and passport number is apt. Many people can have a particular name, but your passport number should be unique to you.
+
+You can't have more than one id for a particular element. `<h1 id="heading big"> wil not work`. But any HTML element can have more than one class. While tag and class selectors are widely used, id selectors are used more sparingly.
+
+`Another interesting feature regarding css selectors is something called a pseudo-class.`
+
+
+>If you have a look at some of the properties in the css refereence [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference), you will find that some them start with a colon, such as `:active`. These are called pseudo classes. And this is because HTML elements can have different states.
+
+For instance, you can get a css element to change based on whether you're hovering over a piece of text or an image or not. These are two different states: `hovering over` or `not hovering over`.
+
+The pseuo-element that you will most commonly find is the hover element. Read the documentation on [click](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover).
+
+```javascript
+/* Selects any <a> element when "hovered" */
+a:hover {
+  color: orange;
+}
+```
 
