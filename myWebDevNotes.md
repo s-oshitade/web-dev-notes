@@ -37,7 +37,7 @@ Will you quit when you get stuck? Remember that good programmers just stare at t
 https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
 https://docs.emmet.io/cheat-sheet/ 
 
-Use <br> to insert a blank line or to move content to the next line. This does not require the closing tag. The break tag <br> is a self-closing tag. Use the horizontal rule <hr> to draw an horizontal line. This is another self-closing tag. 
+Use `<br>` to insert a blank line or to move content to the next line. This does not require the closing tag. The break tag `<br>` is a self-closing tag. Use the horizontal rule `<hr>` to draw an horizontal line. This is another self-closing tag. 
 
 The head holds information about the web page and tells the browser how it should handle the page. The image tag is also self-closing. 
 
@@ -55,7 +55,7 @@ Asides hosting pics on sites like FB/ LinkedIn, images can also be saved directl
 
 ### 
 
-> Side notes
+> Side notes:
 Regular review of documentation is very vital to your journey. Make it a daily habit if possible. Some good sources include https://developer.mozilla.org/en-US/ , https://devdocs.io/ , https://www.w3schools.com/.
 
 Go and master the shourcuts on emmet https://docs.emmet.io/cheat-sheet/ and your choice code editor https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf.
@@ -212,4 +212,7 @@ a:hover {
   color: orange;
 }
 ```
+# INTERMEDIATE CSS
+The previous personal website won't get us hired! It looks more like a computer scince professor's CV website.😃
 
+Let's make something that is inspired by [Sean Halpin's personal website](https://web.archive.org/web/20180819202235js_/http://seanhalpin.io/).
