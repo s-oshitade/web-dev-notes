@@ -216,3 +216,47 @@ a:hover {
 The previous personal website won't get us hired! It looks more like a computer scince professor's CV website.😃
 
 Let's make something that is inspired by [Sean Halpin's personal website](https://web.archive.org/web/20180819202235js_/http://seanhalpin.io/).
+
+You can link a css stylesheet like so:
+`<link rel="stylesheet" href="css/styles.css" type="text/css">`
+
+The type="text/css" is optional but you must make accurate reference to the location of the css file, i.e. href (hypetext reference).
+## FAVICONS
+To create a favicon (favorite icon), go to https://www.favicon.cc/.
+
+Link your favicon like so:
+ ` <link rel="icon" href="favicon.ico">`
+
+Using `Pesticide`, hold down control and hover on the boxes. You will see some information at the foot of the page, about the element that you're hovering on.
+## HTML DIVS
+You can use divs to structure your html elements into separate `container`s or boxes that can be styled separately. 
+
+`div` stands for Content Division Element. The div can have a height based on the css rule that you apply to it. But when it has content, a div is also able to assume a height that is just sufficient to `CONTAIN` the elements within it.
+
+You can use the chrome dev tools -> inspect -> Elements -> styles to experiment and test out the changes that need to be made. What you see is what you get. ONce you're satisfied with what you can see, you can then head over to your css and implement it.
+
+## THE BOX MODEL OF WEBSITE STYLING!💪
+Every single element on screen is treated as a box by CSS. By styling that box - it's height, padding, margin, etc - that's how we can the determine how the elements can be laid out and how they will show up on a screen. This concept is known as The Box Model.
+
+When a div container has no content, then it will have no dimension unless you specify css rules, e.g. height and/or width.
+
+Padding makes the element 'look' different in size, but margin does not. That's because the padding takes the background color of the element, so it pads the content. While the margin does not take the color of the element, it pushes away other elements and creates a space between elements.
+### The border
+The [border](https://developer.mozilla.org/en-US/docs/Web/CSS/border) is a very important aspect of a box. The border shorthand CSS property sets an element's border. It sets the values of [border-width](https://developer.mozilla.org/en-US/docs/Web/CSS/border-width), [border-style](https://developer.mozilla.org/en-US/docs/Web/CSS/border-style), and [border-color](https://developer.mozilla.org/en-US/docs/Web/CSS/border-color). Please read each of the linked docs - border, border-width, border-style, border-color. Also review the reference for margin and padding. With these, you will be able to handle the CSS box/container well.
+
+Here's a lecture on [The Box Model](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12287726#questions/8856680). Please re-watch!
+
+## THE CSS DISPLAY PROPERTY
+The display property has four different values.
+1. `Block` elements such as `<p>`, `<h1 - h6>`, `ul, ol, <hr, article, section, div`
+2. `Inline`, such as span, img, `<a>`
+A major issue with the inline elements is that you can't set the width to a particular value. It won't respond. On the other hand, block elements allow you to set the width but it won't allow multiple elements to sit on the same line.
+3. If you change the display to `inline-block`, then you get the best of both worlds. Images are typically handled as inline block elements.
+4. `display: none`. This removes such element from the website.
+Quite similar to display: none, there's a property called visibility. When the property `visibility` is set to a value of hidden, The element disappears but its original position is kept.
+
+## CSS STATIC AND RELATIVE POSITIONING
+
+...Exploring css positioning in more detail. It's important to note that: even without css, our html has pre-defined rules for how it should be displayed on your webpage. We have to understand how things get positioned by default before we can go on to change it and bend it  to our rules without getting confused or stuck.
+
+
