@@ -2,6 +2,7 @@
 
 > Note: Links to most of the resources in this web development course can be found here: https://www.appbrewery.co/p/web-development-course-resources
 
+
 ## Section 1(4) - 12 Rules to learn code
 1. Trick your brain with the 20 minute rule
 2. Code for a purpose
@@ -31,6 +32,11 @@ _Credit: Angela Yu, Lead Instructor at the App Brewery_
 ```
 Will you quit when you get stuck? Remember that good programmers just stare at the screen more than half of the time! You will be hired to solve problems, so get used to the stuck-unstuck cycle. Enjoy it!
 ```
+***
+## MY BACKLOG
+https://eslint.org/
+
+***
 
 # SECTION 2: INTRODUCTION TO HTML 
 
@@ -394,3 +400,17 @@ https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1UR
 Angela
 
 Tip from Angela on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/17966538#questions).
+***
+# SECTION 6 - INTRODUCTION TO BOOTSTRAP
+Bootstrap is a frontend library. It's a bunch of code that can make website design much easier. 
+
+![](bootstrap.jpeg)
+
+Originally developed by Twitter, it is now free and open source.It's one of the most-starred repos on Github. It is THE most popular frontend framework/ library.
+
+It enables you to make your site responsive. Will bootstrap, you will be able to change your layout depending on the size of the device/ view port. It also goves you access to a bunch of pre-styled elements that you can easily drop into your code/ site.
+
+`Unlike codepen`, [codeply](https://www.codeply.com/) `is a playground that allows you to include frameworks like react, bootstrap, vue, Tailwind, etc.`
+
+
+
