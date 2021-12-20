@@ -88,6 +88,7 @@ You can use a tags to create satellite pages that link back to your index.html s
 
 ## My Mac
 1. Emoji Keyboard: cmd + ctr + space. Or better still, just type the function key (based on my set preferences)!
+2. Page down on Mac: fn + down-arrow.
 
 ## Emmet
 1. For all elements, just start typing the element name and hit enter
@@ -257,6 +258,139 @@ Quite similar to display: none, there's a property called visibility. When the p
 
 ## CSS STATIC AND RELATIVE POSITIONING
 
-...Exploring css positioning in more detail. It's important to note that: even without css, our html has pre-defined rules for how it should be displayed on your webpage. We have to understand how things get positioned by default before we can go on to change it and bend it  to our rules without getting confused or stuck.
+...Exploring css positioning in more detail. It's important to note that: even without css, our html has pre-defined rules for how it should be displayed on your webpage. 
 
+`We have to understand how things get positioned by default before we can go on to change it and bend it  to our rules without getting confused or stuck.`
 
+- Rule #1: Content is everything. Inline elements only take as much width and as much height as the content. So if you have a span that contains a long word, then you will have a short width. And if you have a span that contains a loong word, then you will have a long width. With block elements, even though they take a 100% of the width, the height is still determined by the content. So your content is the first thing that determines how large things gets displayed and what the height and width will be. And this is despite any CSS.
+- Rule #2: The order of your elements on-screen comes from your HTML code.
+- Rule #3: Children sit on top of top parents. So if you image that you have X, Y, Z dimensions, with the z dimension reprenting closeness to the user relative to the screen. A paragraph that is nested in a div would be closer to the user than the div.
+These 3 rules determine the placement of objects on the screen, just based on HTML.
+
+`POSITION: With CSS, you can POSITION elements on the screen the way that you want. Most times, you would need to do this as a developer.`
+
+There are multiple ways to change the Position property of elements with CSS. They include (among others):
+1. Static - Default.
+2. Relative - Position relative to where the element shoud lhave been by default.
+3. Absolute - Position relative to parent. Absolute positioning takes element out of the flow of HTML, unlike relative positioning that leave the 'ghost' of the element behind.
+4. Fixed: A fixed element stays in its position even when you  scroll through a web page. For instance, it can be implemented like so:
+
+```javascript
+.className {
+  position: fixed;
+  top: 0;
+}
+```
+
+The position property uses four coordinates - top, right, bottom, left. Think of these coordinates as special margins. 
+
+`You can use containers (e.g. divs) to fine-tune the position of elements on screeen by using a combination of relative and absolte positioning.`
+
+## THE DARK ART OF CENTERING ELEMENTS
+The easiest way of centering elements is by tapping into a property called `text-align`.This property has to be set inside of a parent container, such as the body.
+```javascript
+body {
+  text-align: center;
+}
+```
+This works as long as we've got inline block elements sucha as images, or if we've got full-width block elements like h1 or p tag.
+
+When you set a width property for a child element of the body in the example above, then the text-align rule would not apply to such child element.
+In such a case, you can still center to the child element by using `margin-auto`.
+
+As an example further to the one above:
+```javascript
+h1 {
+  width: 10%; // this takes our h1 element out of the influence of the text-align above
+  margin: 0 auto; //sets the element to be horizontally centered on display.
+}
+
+```
+
+With reference to the css-site example, our bottom cloud has an absolute position. In order to position it relative to something, then one of the parents has to have its position set to relative, and if we don't, then it will be relative to the body.
+
+## FONT STYLING
+
+There are two very important decisions that you have to make in web development:
+1. A color palatte, and
+2. A font scheme
+
+There are 5 major font families listed on our code editor - Serif, Sans-serif, monospace, cursive and fantasy. monospace is good for reprensting code.  For most browsers, the default serif is the times font, and the default sans-serif is Arial.
+
+Use https://www.cssfontstack.com to check out the usage of fonts.You can easily copy font families and ``stack of fallbacks` here. Use a font stack to influence how you're site is rendered when a user doesn't have your primary font installed on their machine. 
+
+`To ensure that EVERYBODY has the same experience on your website, then use something called  FONT EMBEDDING.` Refer to https://fonts.google.com/. After selecting preferred fonts, copy and paste the `<link>` to your html. This will take users that don't have the fonts installed, to the ref site. And then copy/paste the css rules accordingly, to specify how your selected fonts should be applied to the body and/or specific elements on your site.
+
+`Aside` - Use lorem ipsum to set up your websites when you haven't gotten content for the txt yet. Just type lorem on your code editor and enter. You can also use the * operator to speicify how much of lorem content you need before you hit enter. You will find the following sites useful: https://loremipsum.io/ , lorem-ipsum.perbang.dk . For images, check google or got to https://www.flaticon.com. There are more than half a million icons. Download as png.You can also right-click and copy the image address to your src. For animated GIFs, head over to giphy.com. If you select the sticker tages, then your background colors will go all around it. 
+
+## CSS Sizing
+* Percentages can be used for sizing. This is one way of achieving dynamic sizing.
+
+  `100% === 16px`
+* Another way to size dynemaically is the use of `em`. This should not be confused with the em tage in HTML which is used for emphasis/ italics. Historically, the `em` was the width of the capital letter `M`. This is no longer true. What is true though is that 
+
+  `1em === 16px`
+
+`Aside`: Make a habit of inspecting the sites of great companies like Uber, TechCrunch, Airbnb, Netflix, etc. Use your dev tools to check out their code and tinker around with it. You stand to learn alot!
+
+With zoom, it doesn't matter if your website is statically or dynamically sized because the zoom will scale your entire content accordingly.
+
+> `An important consideration:` When you're using em or percentages, that value is inherited. So if the parent (e.g. body) specifies a font size of 2em, and the child indicates 5em, then the font displayed will factor in the sizes mentioed in the parent and child elements. This can distort our content. This `rem` solves this by ignoring the parent size. `rem` is relative to the root, not the parent/ enclosing container. `1rem is always === 16px`. So `rem` dos not get affected by upstrem size changes.
+
+```javascript
+//rem is recommended as the most adaptable and least error-prone unit for dynamic sizing.
+```
+
+## My top dozen css properties
+```javascript
+/*
+Here's a list of my top dozen css properties. I will take the time to review the full documentation for these properties [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference).
+
+  - margin
+  - border
+  - padding
+  - display
+  - position
+  - font-weight
+  - line-height
+  - font-family
+  - flex
+  - box-sizing
+  - width, height
+  - z-index
+
+  OTHERS:
+  - Text decoration
+  - color
+  - hover
+*/
+```
+
+## CSS FLOAT AND CLEAR
+Use the float property to wrap texts around an image. You also get to decide where the image should float relative to the texts. So the values for the `float` property can be float: left; right; or none. [Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/float).
+
+"The float CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the page, though still remaining a part of the flow (in contrast to absolute positioning)".
+
+To prevent the text from wrapping around the image, then use the `clear` property. Think of the clear as the anti-float.
+
+"The clear CSS property sets whether an element must be moved below (cleared) floating elements that precede it. The clear property applies to floating and non-floating elements."
+
+`Float is often abused. Don't use it for positioning. This will save you from headaches that could result from the side-effects of the Float property.`
+
+The float lecture is worth re-watching on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12287672#overview).
+
+`Aside` - The [CSS button generator](https://css3buttongenerator.com/) is amazing and should be used regularly.
+
+## GET MORE PRACTICE! SEE NOTE BELOW FROM ANGELA.
+
+> Hey,
+
+In our in-person bootcamps, I often encourage students to practice the skills they've acquired. Because after all, it's practice that turns a beginner into a master.
+
+So why not try your hand at some of these optional front-end challenges and get more practice with HTML and CSS?
+
+https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3
+
+Angela
+
+Tip from Angela on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/17966538#questions).
