@@ -528,3 +528,85 @@ Useful sidenotes - Some other syntax to access the nth child of an object.
 ![](2021-12-22-04-55-06.png)
 
 ## SELECTING HTML ELEMENTS WITH JAVASCRIPT
+
+The use of querySelector to access DOM objects was introduced in the last [section](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12374120#questions/11415058). Other ways include:
+
+1. document.getElementsByTagName("li")[n]
+2. document.getElementsByClassName("btn")[n]
+
+Note  that in "1" and "2" above, "Elements" is in `plural` form, and the result is an `array`. Hence you have to use the bracket notation to access the array element of interest using the bracket notation. This must be done even if there is only one element in the array, in which you will access it at index 0.
+
+3. document.getElementById("title")
+This is sigular and a single item is returned, not an array. Therefore, this would work fine: 
+
+// document.getElementById("title").innerHTML = "Good Bye";
+
+4. document.querySelector("")
+The query selector approach is a much more approach as you can combine (for instance) a tag with a class to reach a specific element, and so on. Unlike 1 - 3, you can use the 4th approach to select an element, a class or an id. The selector should follow the exact format that you use for selection in CSS. You can combine to selectors to achieve higher specificity like so:
+document.querySelector("li a"); 
+When selecting a list item that is also inside a class "item" on the same level, you can select like so:
+document.querySelector("li.item). Note that there's no space between li and item. This applies to the following example: 
+`<li class="item"><a href="https://www.google.com">Google</a></li>`.
+
+When you're not specific enough with the querySelector, it returns only the first item that matches. If you want to return ALL the matching items, then you will have y=to use `querySelectorAll` instead. To get specific using this array from `querySelectorAll`, you can use the bracket notation.
+
+```js
+You can use querySelector and querySelectorAll to achieve most of selection needs when working on the DOM.
+ 
+```
+
+## MANIPULATING AND CHANGING STYLES OF HTML ELEMENTS WITH JAVASCRIPT
+
+When you're trying to change the property names of your html using javascript, you will find that the names are sometimes different from what you see in CSS. For instance, `font-size` will appear as `fontSize`. Notice the camel casing. Use this [link](https://www.w3schools.com/jsref/dom_obj_style.asp) as a guide for writing property names in js.
+
+Also notice that the ALL the values have to be specified as strings. Even numbers.
+
+## THE SEPARATION OF CONCERNS
+In practice, we have to stay conscious of the following with respect to our :
+1. HTML is for content
+2. CSS is for style
+3. JS is for behaviour
+
+We've obviously not been following this rule closely because we have been changing styles of elements using JS.
+
+The thing is we have make some style chnages on the fly to make our site interactive. There's a way to achieve this while maintaining separation of concerns!🤫 😉
+
+```js
+//Use the following code snippet for the explanations of DOM concepts:
+//
+
+```
+![](2021-12-22-08-16-47.png)
+
+1. ClassList: 
+
+This is a property of every DOM object.
+
+For example:
+
+![](2021-12-22-08-11-45.png)
+
+We can .add, .remove or. toggle specified classes.
+
+For example, you can create styles for class .huge on the styles.css sheet, then manipulate the DOM as provided below:
+
+`document.querySelector("h1").classList.add("huge");`
+
+This way, our style is still in our style sheet and our behanviour is still in our JS.
+
+2. Manipluating Text.
+
+We already know about innerHTML. There's something called `.textContent`. The innerHTML will literally return the html, including the tag if it is nested. But .textContent will only return the text, even if nested.
+
+![](2021-12-22-08-33-16.png)
+
+3. Manipulating Attributes of html elements.
+
+You can: 
+* view attributes: `.attributes`,
+* get specified attributes: `.getAttribute("insert attribute name")`, and 
+* set attributes to preferred values: `.setAttributes("which attribite do you want to change, what do you want to change it to")`
+
+![](2021-12-22-08-41-33.png)
+
+`Angela's tip - Trick your brain with the 20-minute rule. Overcome the inertia to starting and leverage the intertia to stop!`
