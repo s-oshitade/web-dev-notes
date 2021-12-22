@@ -34,7 +34,11 @@ Will you quit when you get stuck? Remember that good programmers just stare at t
 ```
 ***
 ## MY BACKLOG
-https://eslint.org/
+
+* https://eslint.org/
+
+* https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3
+* Practice wire framing with https://balsamiq.cloud/sio79i5/projects.
 
 ***
 
@@ -402,15 +406,125 @@ Angela
 Tip from Angela on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/17966538#questions).
 ***
 # SECTION 6 - INTRODUCTION TO BOOTSTRAP
+## WHAT IS BOOTSTRAP?
 Bootstrap is a frontend library. It's a bunch of code that can make website design much easier. 
 
 ![](bootstrap.jpeg)
 
-Originally developed by Twitter, it is now free and open source.It's one of the most-starred repos on Github. It is THE most popular frontend framework/ library.
+Originally developed by Twitter, it is now free and open source. It's one of the most-starred repos on Github. It is THE most popular frontend framework/ library.
 
 It enables you to make your site responsive. Will bootstrap, you will be able to change your layout depending on the size of the device/ view port. It also goves you access to a bunch of pre-styled elements that you can easily drop into your code/ site.
 
 `Unlike codepen`, [codeply](https://www.codeply.com/) `is a playground that allows you to include frameworks like react, bootstrap, vue, Tailwind, etc.`
 
+## INSTALLAING BOOTSTRAP
 
+https://getbootstrap.com/docs/5.1/getting-started/introduction/#quick-start
 
+The simplest way to use Bootstrap is to copy the bootstrap cdn and paste it as a linked css stylesheet. CDN means content delivery network. The CDN cuts down on latency or how long it would take to load the website. Because of the popularity of bootstrap, your customers probably already have the files cached on their browsers.
+
+Another way is to copy and paste the `Starter Template`. Note that the starter template usese some JS and jQuery.
+
+The third way to use B is to download the CSS and JS source code and include them as relative files in your project. Caching does not occur in this scenario.
+
+In the remainder of this course, we will use option 1. For your projects in the future, option 2 is recommended. The starter code ensures tha you have everything you need to maximally leverage Bootstrap.
+Installation video available on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12287996#questions).
+
+## WIREFRAMING
+A wireframe is a low fidelity representation of your proposed website. It enables iteration and buy-in on the design before implementing the website/app.
+
+A mock-up is a HIGH fidelity representation. What you see is what you get.
+
+Workflow
+* Check out UI patterns at ui-patterns.com. Look at other people's websites.
+* Wireframe
+* Mock-up. If you want to go the extra mile, you can even create an animated prototype. A really good resource for getting inspiration on all these is https://dribbble.com/.
+`dribbble.com is a fantastic place to get inspiration for your site!`
+
+* Pencil and paper is a great way to do your wireframing. Use sneakpeekit.com to print out accurate view ports for your device of interest.
+* For more advanced wireframing, https://balsamic.cloud is the indiustry standard. It's quick and collaborative.
+
+***
+# SECTION 9 - INTRODUCTION TO JAVASCRIPT ES6.
+`Caveat - My JS notes will be very lean as I have learned alot of JS already`.
+
+# SECTION 11 - THE DOCUMENT OBJECT MODEL
+
+## ADDING JAVASCRIPT TO WEBSITES
+There's no point writing javaScript codes if we don't know how to incorporate it into our websites, right? Recall the 3 ways to incorporate CSS into websites? Well javascript works very similarly -> 
+1. Inline
+2. Internal
+3. External
+
+We can add inline js by simply adding an attribute to html element. For example:
+
+```javascript
+<body onload="alert('Hello');"> 
+  <h1>Hello!</h1>
+</body>
+// note the careful use of double and single quotation marks.
+
+```
+This means that whenever the body element gets loaded up, then whatever javascript code that exists between the double quotation marks gets carried out. This is not good practice. It's not modular and very difficult to debug.
+
+The internal approach involves the use of a script tag, like so:
+
+```js
+<script type="text/javascript">
+  alert("Hello");
+</script>
+```
+
+This is done in the body of the html.
+
+Lastly, we can incorporate JS into html by using linking to an external source as shown below. This is usually inserted on the line just before body closing tag.
+
+```js
+<body>
+
+ //Insert other lines of code here.
+
+  <script src="index.js" charset="utf-8"></script>
+</body>
+
+/*index.js
+  alert("Hello");
+*/
+
+```
+
+`The position where introduce the js script matters a huge deal.`
+
+Interesting: From index.js, you can change the content of the innerHTML from Hello to Goodbye. Learn more about selcting and manipulating HTML content in the next couple of sections.
+
+## INTRODUCTINO TO THE DOCUMENT OBJECT MODEL
+With HTML and CSS, you can build a static website. But you need your website to be interactive. This is the problem that the DOM solves. It basically cataloues the webpage (HTML) into individual objects that we can select and manipulate.
+
+![](2021-12-22-03-23-22.png)
+
+The task of converting the html into  the DOM is done by the web browser when you load your web page.
+
+![](2021-12-22-03-26-35.png)
+
+What it does is that it turns each of the html elements into and their associated data into a tree structire with a bunch of objects which you can select and manipulate. The reationship between the html elements is mapped out in the tree diagram.
+
+Everything that is contained inside your html is contained in an object called the "document".
+
+Our objects inside the DOM can have properties and actions. You can use the dot notation to select objects in the DOM and manipulate their properties and/or methods.
+
+> On the DOM, we can:
+* GET properties 
+* SET properties by using the `=` to assign a desired value
+* CALL a method on a selected object 
+
+![](2021-12-22-04-26-07.png)
+
+`The key takeaway here is that we can access the properties and methods by using the dot notation, and by so doing we can manipluate the object.`
+
+Angela's introduction to DOM manipulation is worth rewatching!...on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12374120#questions/11415058).
+
+Useful sidenotes - Some other syntax to access the nth child of an object.
+
+![](2021-12-22-04-55-06.png)
+
+## SELECTING HTML ELEMENTS WITH JAVASCRIPT
