@@ -497,7 +497,7 @@ Lastly, we can incorporate JS into html by using linking to an external source a
 
 Interesting: From index.js, you can change the content of the innerHTML from Hello to Goodbye. Learn more about selcting and manipulating HTML content in the next couple of sections.
 
-## INTRODUCTINO TO THE DOCUMENT OBJECT MODEL
+## INTRODUCTION TO THE DOCUMENT OBJECT MODEL
 With HTML and CSS, you can build a static website. But you need your website to be interactive. This is the problem that the DOM solves. It basically cataloues the webpage (HTML) into individual objects that we can select and manipulate.
 
 ![](2021-12-22-03-23-22.png)
@@ -578,7 +578,7 @@ The thing is we have make some style chnages on the fly to make our site interac
 ```
 ![](2021-12-22-08-16-47.png)
 
-1. ClassList: 
+1. Manipulating styles with ClassList: 
 
 This is a property of every DOM object.
 
