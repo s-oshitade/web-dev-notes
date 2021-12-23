@@ -569,7 +569,7 @@ In practice, we have to stay conscious of the following with respect to our :
 
 We've obviously not been following this rule closely because we have been changing styles of elements using JS.
 
-The thing is we have make some style chnages on the fly to make our site interactive. There's a way to achieve this while maintaining separation of concerns!🤫 😉
+> The thing is we have to make some style chnages on the fly to make our site interactive. There's a way to achieve this while maintaining separation of concerns!🤫 😉
 
 ```js
 //Use the following code snippet for the explanations of DOM concepts:
@@ -610,3 +610,24 @@ You can:
 ![](2021-12-22-08-41-33.png)
 
 `Angela's tip - Trick your brain with the 20-minute rule. Overcome the inertia to starting and leverage the intertia to stop!`
+
+Completed challenge on click: [dice-game ](https://github.com/s-oshitade/dice-game-domManipulation)!
+
+Here's my code for the dice game:
+
+```js
+const randomNumber1 = Math.floor(Math.random() * 6) + 1;
+const randomDiceImage1 = `images/dice${randomNumber1}.png`;
+document.querySelectorAll("img")[0].setAttribute("src", randomDiceImage1);
+
+const randomNumber2 = Math.floor(Math.random() * 6) + 1;
+const randomDiceImage2 = `images/dice${randomNumber2}.png`;
+document.querySelectorAll("img")[1].setAttribute("src", randomDiceImage2);
+
+randomNumber1 > randomNumber2 ? document.querySelector("h1").innerHTML = "🥳 Player 1 Wins!" :
+randomNumber1 < randomNumber2 ? document.querySelector("h1").innerHTML = "Player 2 Wins 🥳!" : 
+document.querySelector("h1").innerHTML = "Draw!";
+```
+
+Angela's tip on click: [Learn before you eat!](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/17966986#questions/11590714)
+
