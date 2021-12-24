@@ -68,7 +68,7 @@ Asides hosting pics on sites like FB/ LinkedIn, images can also be saved directl
 > Side notes:
 Regular review of documentation is very vital to your journey. Make it a daily habit if possible. Some good sources include https://developer.mozilla.org/en-US/ , https://devdocs.io/ , https://www.w3schools.com/.
 
-Go and master the shourcuts on emmet https://docs.emmet.io/cheat-sheet/ and your choice code editor https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf.
+Go and master the shortcuts on emmet https://docs.emmet.io/cheat-sheet/ and your choice code editor https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf.
 
 You can upload your images to https://photobucket.com/explore . To quickly get circular cuts of images, you can use https://crop-circle.imageonline.co/ .
 
@@ -139,7 +139,7 @@ Using tables for layouts is not a great idea. There are more powerful tools. Not
 ## HTML FORMS
 
 ### Official docs - https://devdocs.io/html/element/form . To be reviewed!
-MDN refere for HTML: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference 
+MDN reference for HTML: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference 
 
 Sample from my exercise: https://github.com/s-oshitade/html-personal-site/blob/main/contact.html `(Lines 16 - 24)`
 
@@ -211,11 +211,11 @@ You can't have more than one id for a particular element. `<h1 id="heading big">
 `Another interesting feature regarding css selectors is something called a pseudo-class.`
 
 
->If you have a look at some of the properties in the css refereence [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference), you will find that some them start with a colon, such as `:active`. These are called pseudo classes. And this is because HTML elements can have different states.
+>If you have a look at some of the properties in the css reference [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference), you will find that some them start with a colon, such as `:active`. These are called pseudo classes. And this is because HTML elements can have different states.
 
 For instance, you can get a css element to change based on whether you're hovering over a piece of text or an image or not. These are two different states: `hovering over` or `not hovering over`.
 
-The pseuo-element that you will most commonly find is the hover element. Read the documentation on [click](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover).
+The pseudo-element that you will most commonly find is the hover element. Read the documentation on [click](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover).
 
 ```javascript
 /* Selects any <a> element when "hovered" */
@@ -224,14 +224,14 @@ a:hover {
 }
 ```
 # INTERMEDIATE CSS
-The previous personal website won't get us hired! It looks more like a computer scince professor's CV website.😃
+The previous personal website won't get us hired! It looks more like a computer science professor's CV website.😃
 
 Let's make something that is inspired by [Sean Halpin's personal website](https://web.archive.org/web/20180819202235js_/http://seanhalpin.io/).
 
 You can link a css stylesheet like so:
 `<link rel="stylesheet" href="css/styles.css" type="text/css">`
 
-The type="text/css" is optional but you must make accurate reference to the location of the css file, i.e. href (hypetext reference).
+The type="text/css" is optional but you must make accurate reference to the location of the css file, i.e. href (hypertext reference).
 ## FAVICONS
 To create a favicon (favorite icon), go to https://www.favicon.cc/.
 
@@ -613,6 +613,8 @@ You can:
 
 Completed challenge on click: [dice-game ](https://github.com/s-oshitade/dice-game-domManipulation)!
 
+# SECTION 12 - CHALLENGE: THE DICEE GAME
+
 Here's my code for the dice game:
 
 ```js
@@ -627,7 +629,90 @@ document.querySelectorAll("img")[1].setAttribute("src", randomDiceImage2);
 randomNumber1 > randomNumber2 ? document.querySelector("h1").innerHTML = "🥳 Player 1 Wins!" :
 randomNumber1 < randomNumber2 ? document.querySelector("h1").innerHTML = "Player 2 Wins 🥳!" : 
 document.querySelector("h1").innerHTML = "Draw!";
+
 ```
 
 Angela's tip on click: [Learn before you eat!](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/17966986#questions/11590714)
+
+# SECTION 13 - ADVANCED JAVASCRIPT AND DOM MANIPULATION
+
+In this section, we used the [drum-kit](https://github.com/s-oshitade/drum-kit) challenge to review key js concepts, such as event listers, higher order functions, callback functions, animation, etc.
+
+## ADDING EVENT LISTENERS TO A BUTTON
+
+The image below is a screenshot from the static form of the website. Nothing happens when you click on the buttons.
+
+![](2021-12-23-12-48-19.png)
+
+In order to start registering the button clicks, I need to add an event listener to it, so the button will let me know when a user clicks on it.
+
+Inside index.html, first create a function (handleClick) that does something when a button get clicked. We basically want our button to trigger this function when it receives a click.
+
+`In order to that, we first need to select our button inside the html and add an event lister that listens for when it gets clicked; and when it does - to call this function called handleClick`.
+
+At this point, please go an review the docs for EventTarget.addEventListener() on [click](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener). 
+
+`Make a habit of checking the docs when you're using a new method or property`.
+
+The `target` in ths case is the button. Click on [this link](https://developer.mozilla.org/en-US/docs/Web/Events) to see all the different event types that you can listen to. In our case, we're simply interested in the [click event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event).
+
+The addEventListener() method takes two parameters:
+
+1. `Event Type`: In this case, the `click` event which is represented as a case-sensitive string; and
+2. A `listener`. In our case, the listener is the function that will be called when that click event gets detected. In our case, the listener is `function handleClick`.
+```js
+document.querySelector("button").addEventListener("click", function (){
+  alert("I got clicked");
+})
+```
+But this only selects the first button. You will need to use a loop, like so:
+
+```js
+  const numberOfDrumButtons = document.querySelectorAll(".drum").length;
+
+  for (let i = 0; i < numberOfDrumButtons; i++){
+    document.querySelectorAll(".drum")[i].addEventsListener("click", function () {
+      alert("I got clicked!");
+    });
+  }
+```
+
+[This 14-minute video](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383942#overview) clearly breaks down how to add event listeners to buttons. Watch it again!
+
+## HIGHER ORDER FUNCTIONS AND PASSING FUNCTIONS AS ARGUMENTS
+
+Watch [this video](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383962#overview) (from 4:00) to learn the thinking behind the development of a calculator using higher order functions and arguments. I think I can code up a fully functional calculator at this point. 🙂
+Also look out for the use of chrome debugger feature.(8:30)
+
+```js
+//Calculator function - Tinker on chrome dev tool and some more functions to the calculator.
+
+//Use the debugger to step through how it works.
+
+const add = function (num1, num2){
+    return num1 + num2;
+}
+
+const subtract = function (num1, num2){
+    return num1 - num2;
+}
+
+const divide = function (num1, num2){
+    return num1/num2;
+}
+
+const multiply = function (num1, num2){
+    return num1 * num2;
+}
+
+const calculator = function (num1, num2, operator){
+    return operator(num1, num2);
+}
+//calculator(2, 7, add) = 9
+//calculator(9, 2, multiply) = 18
+
+//etc
+```
+
+## HOW TO PLAY SOUNDS ON A WEBSITE
 
