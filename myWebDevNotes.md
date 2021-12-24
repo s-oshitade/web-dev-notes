@@ -681,11 +681,11 @@ But this only selects the first button. You will need to use a loop, like so:
 
 ## HIGHER ORDER FUNCTIONS AND PASSING FUNCTIONS AS ARGUMENTS
 
-Watch [this video](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383962#overview) (from 4:00) to learn the thinking behind the development of a calculator using higher order functions and arguments. I think I can code up a fully functional calculator at this point. 🙂
+Watch [this video](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383962#overview) (from 4:00) to learn the thinking behind the development of a calculator using higher order functions and arguments. By combining my knowledge of event listeners and higher order functions, I think I can code up a fully functional calculator if I spend some time on it. 🙂
 Also look out for the use of chrome debugger feature.(8:30)
 
 ```js
-//Calculator function - Tinker on chrome dev tool and some more functions to the calculator.
+//Calculator function - Tinker on chrome dev tool and add some more functions to the calculator.
 
 //Use the debugger to step through how it works.
 
@@ -713,6 +713,250 @@ const calculator = function (num1, num2, operator){
 
 //etc
 ```
+These types of functions (like `function calculator` above) that can take other functions as input are called Higher Order Functions. This feature is available in a number of programming languages, but not all languages feature higher order functions. It's available in JS, Java, Ruby, Python, Haskell, C++, PHP, C#, Go, Swift. We will rely on it heavily in JS as we learn to manipulate the DOM and give our websites/apps more and more behavior.
 
 ## HOW TO PLAY SOUNDS ON A WEBSITE
 
+Do yourself a favor and watch the video [here](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12383968#questions/8782272).
+
+We've previously responded to click events on our drum kit with an alert. Now, we are going to respond by playing appropriate sounds.
+
+You can easily do this by creating a new audio object, pass in the name of the file that you want to play, and then call the method `play` on the new audio object.
+
+The syntax is as follows:
+
+```js
+const audio = new Audio ('audio_file.mp3');
+audio.play();
+
+// This uses the HTMLAudioElement. You can look up the docs for the HTMLAudioElement, but App Academy's explanation is sufficient for the topic under consideration.
+```
+Like the audio code snippet above, you will find very helpful code snippets on stackoverflow or even from other developers in your network. What is important is that you study the code (really find out what the code does) and then you adapt it to your own project. The above code snippet has been incorporated into my drum kit project as shown below. Spot the use of `switch` - a syntax that I find quite annoying! 😄  This scenario presents a good use-case for `switch`. Multiple (or nested) `if` statements wouldn't be looking any better in this case. Also spot the ue of `this` to make reference to the object that triggered the event. Lovely! 😎
+
+Still having issues with `switch`? Check the video [here](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12384090#overview):
+
+```js
+  const numberOfButtons = document.querySelectorAll(".drum").length;
+
+for (let i = 0; i < numberOfButtons; i++) {
+  document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+    let buttonInnerHTML = this.innerHTML;
+    switch (buttonInnerHTML) {
+      case "w":
+          const tom1 = new Audio('sounds/tom-1.mp3');
+          tom1.play();
+       break;
+
+      case "a":
+        const tom2 = new Audio('sounds/tom-2.mp3');
+        tom2.play();
+      break;
+      
+      case "s":
+        const tom3 = new Audio('sounds/tom-3.mp3');
+        tom3.play();
+      break;
+
+      case "d":
+        const tom4 = new Audio('sounds/tom-4.mp3');
+        tom4.play();
+      break;
+
+      case "j":
+        const snare = new Audio('sounds/snare.mp3');
+        snare.play();
+      break;
+
+      case "k":
+        const crash = new Audio('sounds/crash.mp3');
+        crash.play();
+      break;
+
+      case "l":
+        const kick = new Audio('sounds/kick-bass.mp3');
+        kick.play();
+      break;
+
+    default: console.log(buttonInnerHTML);
+    }
+  })
+}
+```
+## DEEPER UNDERSTANDING OF JS OBJECTS
+
+[View recording here](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12384034#overview).
+
+This section goes deep into the rationale and nature of objects. It also captures the use of the `Constructor Function` for creating objects <u>factory-style</u>! This is a subtle peek into <u>object-oriented programming</u>.
+
+The example below shows the creation of a Constructor Function `HouseKeeper` and how it has been used to create objects houseKeeper1 and houseKeeper2.
+
+![](2021-12-24-05-39-42.png)
+
+The below version of our constructor function incorporates a function. This function will be included as a method in any object that is generated from the constructor and can be accessed with the dot notation and then called. You should try this out!
+
+You really want to understand how to play with the objects on your web browser? [Then watch this](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12384070#overview)!
+
+![](2021-12-24-05-57-28.png)
+
+![](2021-12-24-06-02-03.png)
+
+## USING KEYBOARD EVENT LISTENERS TO CHECK FOR THE KEY PRESSES.
+
+> Note: keypress is now deprecated. You should use keydown instead.
+
+`So if we we wanted our website to not just detect button presses but also to detect keyboard key presses to activate the relevant drum, how exactly fo we do that?`
+
+![](2021-12-24-06-27-34.png)
+
+>`Treasured knowledge awaits you in this 8-minute` [video](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12384106#overview)!
+
+The explanation about tapping into the the event by passing a parameter to `tap into` the keyboard event was a breakthrough. It's was also extended to the click event on the respective drums. My use of JS will not be the same henceforth! Epiphany!!!
+
+I was able easily solve the challenge posed in the video. Code snippet below:
+
+```js
+const makeSound = function (key){
+  switch (key) {
+    case "w":
+        const tom1 = new Audio('sounds/tom-1.mp3');
+        tom1.play();
+     break;
+
+    case "a":
+      const tom2 = new Audio('sounds/tom-2.mp3');
+      tom2.play();
+    break;
+    
+    case "s":
+      const tom3 = new Audio('sounds/tom-3.mp3');
+      tom3.play();
+    break;
+
+    case "d":
+      const tom4 = new Audio('sounds/tom-4.mp3');
+      tom4.play();
+    break;
+
+    case "j":
+      const snare = new Audio('sounds/snare.mp3');
+      snare.play();
+    break;
+
+    case "k":
+      const crash = new Audio('sounds/crash.mp3');
+      crash.play();
+    break;
+
+    case "l":
+      const kick = new Audio('sounds/kick-bass.mp3');
+      kick.play();
+    break;
+
+  default: console.log(buttonInnerHTML);
+  }
+}
+
+// Detecting button press
+const numberOfButtons = document.querySelectorAll(".drum").length;
+
+for (let i = 0; i < numberOfButtons; i++) {
+  document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+    let buttonInnerHTML = this.innerHTML;
+    makeSound(buttonInnerHTML);
+  })
+}
+
+// Detecting keyboard press
+document.addEventListener("keydown", function (event){
+  makeSound(event.key);
+});
+
+```
+
+
+## UNDERSTANDING CALLBACKS AND HOW TO RESPOND TO EVENTS
+
+Rewatch [here](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12384168#overview).
+
+`To be sure that you have thoroughly understood the concepts, repeat the steps in the video without looking at the video`.
+
+## ADDING ANIMATION TO WEBSITES
+
+Wouldn't it be nice to see the button flash when we click it or when we press a button that corresponds to it? That way, the user will know that they pressed the right key and they're getting the right sounds.
+
+You will need to write a function for this purpose.
+
+Here's my js file file after incorporating the animation function. Video available on [click]().
+
+```js
+const makeSound = function (key){
+  switch (key) {
+    case "w":
+        const tom1 = new Audio('sounds/tom-1.mp3');
+        tom1.play();
+     break;
+
+    case "a":
+      const tom2 = new Audio('sounds/tom-2.mp3');
+      tom2.play();
+    break;
+    
+    case "s":
+      const tom3 = new Audio('sounds/tom-3.mp3');
+      tom3.play();
+    break;
+
+    case "d":
+      const tom4 = new Audio('sounds/tom-4.mp3');
+      tom4.play();
+    break;
+
+    case "j":
+      const snare = new Audio('sounds/snare.mp3');
+      snare.play();
+    break;
+
+    case "k":
+      const crash = new Audio('sounds/crash.mp3');
+      crash.play();
+    break;
+
+    case "l":
+      const kick = new Audio('sounds/kick-bass.mp3');
+      kick.play();
+    break;
+
+  default: console.log(buttonInnerHTML);
+  }
+}
+
+// Adding animation to website
+const buttonAnimation = function (currentKey) {
+    let activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+    setTimeout(function(){
+      activeButton.classList.remove("pressed");
+    }, 100) 
+}
+
+// Detecting button press
+const numberOfButtons = document.querySelectorAll(".drum").length;
+
+for (let i = 0; i < numberOfButtons; i++) {
+  document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+    let buttonInnerHTML = this.innerHTML;
+    makeSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
+
+  })
+}
+
+// Detecting keyboard press
+document.addEventListener("keydown", function (event){
+  makeSound(event.key);
+  buttonAnimation(event.key);
+});
+
+```
+
+# SECTION 14 - JQUERY
