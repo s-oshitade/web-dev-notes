@@ -959,4 +959,36 @@ document.addEventListener("keydown", function (event){
 
 ```
 
+***
+
 # SECTION 14 - JQUERY
+## WHAT IS JQUERY?
+
+jQuery is the JS library that will prevent your fingers from breaking! There are thousands of libraries out there, but none of these libraries have been used or downloaded as often as jQuery. According to W3Techs, 77.8% of the top 10 million websites used jQuery as of April 2021.
+
+Check out regular JS versus jQuery below:
+
+![](2021-12-26-16-25-33.png)
+
+OR
+
+![](2021-12-26-16-29-14.png)
+
+VERSUS
+
+![](2021-12-26-16-30-04.png)
+
+Yup, that's why jQuery is so popular. Now let's learn how to incorporate jQuery into our websites!
+
+## HOW TO INCORPORATE JQUERY INTO WEBSITES
+
+Video available on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12384174#questions/6348862).
+
+The most popular option across the web is to use Google's CDN: `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>`. 
+
+> The jQuery script tag should be pasted ABOVE the JS tag on index.html, right before the closing body tag. 
+
+For minification, use https://www.minfier.org.
+
+## SELECTING ELEMENTS IN JQUERY
+
