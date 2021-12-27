@@ -992,3 +992,36 @@ For minification, use https://www.minfier.org.
 
 ## SELECTING ELEMENTS IN JQUERY
 
+The most basic thing that we need to do when we're creating our website is to select the elements in our web page so that we can manipulate it.
+
+In JS, we could write something like this:
+
+```js
+document.querySelector("h1");
+```
+
+Now if we wanted to write this in jQuery, we would have this instead:
+
+```js
+$("h1")
+```
+
+...essentially replacing some code with the `$`.
+
+If we wanted to select all the `button` elements, we would write something like this:
+```js
+document.querySelectorAll("button")
+
+```
+
+With jQuery, you can select `ALL` the buttons like so:
+
+```js
+$("button");
+```
+This is why a loop was not required in the earlier example above. There is no difference between selecting one and selecting many.
+
+video available on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12384192#questions/6348862). 2 minutes.
+
+## MANIPULATING STYLES WITH JQUERY
+
