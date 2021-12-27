@@ -1025,3 +1025,134 @@ video available on [click](https://www.udemy.com/course/the-complete-web-develop
 
 ## MANIPULATING STYLES WITH JQUERY
 
+Video available on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12384196#questions/6348862).
+
+As previously discussed, separation of concerns is important. Let JS be about behaviour, CSS about styles and HTML about structure. With this in mind, manipulating styles with jQuery "$" is best when there's an existing CSS style that we want to incorporate. If there's none, it's best the create it.
+
+![](2021-12-27-03-23-46.png)
+
+Just as we can .addClass, we can also .removeClass. We can also check if an element has a particular class. (.hasClass).
+
+
+## Manipulating text with jQuery
+Video available on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12384208#questions/6348862).
+```js
+$("h1").text("Bye")
+```
+Note the difference between the .text method and the .html method in $.
+
+## MANIPULATING ATTRIBUTES WITH JQUERY
+
+```js
+$("a").attr("href", "https://www.google.com")
+
+// with this code, we can set the href attribute to yahoo.com. If we only wanted to get the attribute, then we wouldn't have included the second parameter.
+```
+
+## ADDING EVENT LISTENERS TO $
+
+Video available on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12384224#questions).
+
+```js
+$("h1").click(function(){
+  $("h1").css("color", "purple")
+})
+
+```
+This code listens for a click on the h1 tag. Once a click is detected, it calls the associated method (which in this case is a callback function). 
+
+The other pain that we had previously was that if we wanted to add an event listener to all 5 buttons, we had to write a for loop if we only had javascript in our toolbox. We had to write like so:
+
+```js
+for (var i = 0; i <5; i++){
+  document.querySelectorAll("button")[i].addEventListener("click", function(){
+    document.querySelector("h1").style.color = "purple";
+  })
+}
+```
+
+This  same code above can be rewritten like so:
+
+```js
+$("button").click(function(){
+  $("button").css("color", "purple");
+})
+
+```
+Note that jQuery selected all the buttons.
+
+Apart from a click listener, we could also bind a keypress event listener.
+
+```js
+$("body").keypress(function(event)) {
+  $("h1").text(event.key);
+}
+```
+
+There's an even more flexible way of adding an event listener.
+
+```js
+$("h1").on("mouseover", function(){
+  $("h1").css("color", "purple");
+})
+
+```
+
+## ADDING AND REMOVING ELEMENTS FROM $
+video on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12384230#questions).
+```JS
+$("h1").before("<button>New</button>");
+$("h1").after("<button>New</button>");
+$("h1").prepend("<button>New</button>");
+$("h1").append("<button>New</button>");
+$("button").remove();//this will remove all the button elements on our webpage.
+
+```
+
+## WEBSITE ANIMATIONS WITH JQUERY
+
+Video on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12384236#questions).
+
+```js
+//examples
+$("button").on("click", function() {
+  $("h1").hide();
+})
+```
+
+` $("h1").show();`
+
+` $("h1").toggle();` 
+
+` $("h1").fadeOut();`
+
+` $("h1").fadeIn();`
+
+` $("h1").fadeToggle();`
+
+` $("h1").slideUp();`
+
+` $("h1").slideDown();`
+
+```js
+//If you want to have greater control over your $ animations, then you should use the .animate() method instead of the built-in animations above.
+
+$("button").on("click", function() {
+  $("h1").animate({opacity: 0.5}) //Here, you can only use css rules that have a NUMERIC VALUE. Other examples are margin: 20 (that is, 20 pixels), margin: "20%" - use quotes for percentages.
+});
+
+```
+
+To use multiple animations, you can chain them like so:
+
+```js
+$("button").on("click", function(){
+  $("h1").slideUp().slideDown().animate({opacity: 0.5});
+  //These animations would take place sequentially.
+})
+
+```
+
+>REMEMBER THAT PROGRAMMING IS LIKE AN OPEN-BOOK EXAM. YOUR BRAIN IS SACRED. DON'T MEMORIZE STUFF. JUST SEEK TO UNDERSTAND AND KNOW WHERE TO FIND WHAT YOU NEED. JUST KNOW THAT THEY EXIST AND ROUGHLY WHAT THEY'RE CALLED AND WHAT THEY'RE ABLE TO DO.
+
+Check out jQuery's official docs for animation https://api.jquery.com/animate/. This is probably worth a good look because it's makes the site dope!
