@@ -39,7 +39,7 @@ Will you quit when you get stuck? Remember that good programmers just stare at t
 
 * https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3
 * Practice wire framing with https://balsamiq.cloud/sio79i5/projects.
-
+* Install hyperTerminal
 ***
 
 # SECTION 2: INTRODUCTION TO HTML 
@@ -1156,3 +1156,100 @@ $("button").on("click", function(){
 >REMEMBER THAT PROGRAMMING IS LIKE AN OPEN-BOOK EXAM. YOUR BRAIN IS SACRED. DON'T MEMORIZE STUFF. JUST SEEK TO UNDERSTAND AND KNOW WHERE TO FIND WHAT YOU NEED. JUST KNOW THAT THEY EXIST AND ROUGHLY WHAT THEY'RE CALLED AND WHAT THEY'RE ABLE TO DO.
 
 Check out jQuery's official docs for animation https://api.jquery.com/animate/. This is probably worth a good look because it's makes the site dope!
+
+# SECTION 17: BACKEND WEB DEVELOPMENT EXPLAINED
+
+Video available on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12407820#questions).
+
+# SECTION 18 - Node.js
+
+Videos available on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12384268#questions).
+
+We clearly understand that in order to build a fullstack web application, we need to have a backend in addition to our frontend. 
+
+Backend components:
+![](2021-12-30-05-00-12.png)
+
+`The great news is that Node.js allows us to build a backend with the same programming language - JS!`
+
+# SECTION 19 - Express.js with Node.js
+Videos on [click](https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/12384462#questions/12555994). Priceless 🔥🔥🔥
+
+[Here's](https://github.com/s-oshitade/calculator) the little project that I completed under this section. Snippets below.
+
+```js
+//calculator.js
+const express = require('express');
+const bodyParser = require('body-parser'); 
+const app = express();
+app.use(bodyParser.urlencoded({extended: true}));
+const port = 3000;
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+})
+
+app.post("/", (req, res) => {
+  const num1 = Number(req.body.num1);
+  const num2 = Number(req.body.num2);
+  const result = num1 + num2;
+  res.send("The result of the calculation is " + result);
+})
+
+app.listen(port, () => {
+  console.log("Server running on port 3000!");
+})
+
+//BMI Calculator
+app.get("/bmicalculator", (req, res) => {
+  res.sendFile(__dirname + "/bmiCalculator.html");
+})
+
+app.post("/bmicalculator", (req, res) => {
+  const wgt = Number(req.body.weight);
+  const hgt = Number(req.body.height);
+  const bmi = (wgt / hgt**2).toFixed(2);
+  res.send(`<h2>Your BMI is ${bmi} Kg/Sqm.</h2>`)
+})
+```
+
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+<body>
+  <h1>Calculator</h1>
+  <form action="/" method="post">
+    <input type="text" name="num1" placeholder="First Number">
+    <input type="text" name="num2" placeholder="Second Number">
+    <button type="submit" name="submit">Calculate</button>
+  </form>
+</body>
+</html>
+```
+```html
+<!-- bmiCalculator.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+</head>
+<body>
+  <h1>BMI Calculator</h1>
+  <form action="/bmicalculator" method="POST">
+    <input type="text" name="weight" placeholder="weight">
+    <input type="text" name="height" placeholder="height">
+    <button type="submit">Calculate BMI</button>
+  </form>
+</body>
+</html>
+```
